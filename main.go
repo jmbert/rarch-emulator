@@ -18,7 +18,7 @@ func Emulate(file string) error {
 	var s state.State
 	s.Init(fcontents)
 
-	for {
+	for i := 0; ; i++ {
 		pc := s.Registers.PC.Value
 		var instrBuffer []byte = make([]byte, 11)
 		for i := 0; i < len(instrBuffer); i++ {
