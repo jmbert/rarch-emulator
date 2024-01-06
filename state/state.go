@@ -457,9 +457,9 @@ func (s State) String() string {
 PC: %.16X Status: %.16X
 R1: %.16X R2: %.16X R3: %.16X R4: %.16X R5: %.16X R6: %.16X R7: %.16X R8: %.16X R9: %.16X R10: %.16X R11: %.16X R12: %.16X R13: %.16X
 SP: %.16X BP: %.16X
-I0: I1: %.16X I2: %.16X I3: %.16X I4: %.16X I5: %.16X I6: %.16X I7: %.16X I8: %.16X I9: %.16X I10: %.16X I11: %.16X I12: %.16X I13: %.16X I14: %.16X I15: %.16X
-S0: S1: %.16X S2: %.16X S3: %.16X S4: %.16X S5: %.16X S6: %.16X S7: %.16X
-D0: D1: %.16X D2: %.16X D3: %.16X D4: %.16X D5: %.16X D6: %.16X D7: %.16X`,
+I0: %.16X I1: %.16X I2: %.16X I3: %.16X I4: %.16X I5: %.16X I6: %.16X I7: %.16X I8: %.16X I9: %.16X I10: %.16X I11: %.16X I12: %.16X I13: %.16X I14: %.16X I15: %.16X
+S0: %.16X S1: %.16X S2: %.16X S3: %.16X S4: %.16X S5: %.16X S6: %.16X S7: %.16X
+D0: %.16X D1: %.16X D2: %.16X D3: %.16X D4: %.16X D5: %.16X D6: %.16X D7: %.16X`,
 		s.Registers.PC.Value, s.Registers.Status.Value,
 		s.Registers.R1.Value, s.Registers.R2.Value, s.Registers.R3.Value, s.Registers.R4.Value, s.Registers.R5.Value, s.Registers.R6.Value, s.Registers.R7.Value, s.Registers.R8.Value, s.Registers.R9.Value, s.Registers.R10.Value, s.Registers.R11.Value, s.Registers.R12.Value, s.Registers.R13.Value,
 		s.Registers.SP.Value, s.Registers.BP.Value,

@@ -21,6 +21,8 @@ func Load(i rarch_encoding.Instruction, s *state.State) error {
 		s.Registers.WriteReg(register, value)
 
 		break
+	case rarch_encoding.PREF_ABSOLUTE:
+
 	case rarch_encoding.PREF_INDREL:
 		index := instr.Immediate.Value
 
