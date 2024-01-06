@@ -10,5 +10,9 @@ var InstructionMap map[byte]func(i rarch_encoding.Instruction, s *state.State) e
 	rarch_encoding.OP_HLT: Halt,
 
 	rarch_encoding.OP_LD:  Load,
+	rarch_encoding.OP_STR: Store,
 	rarch_encoding.OP_JMP: Jump,
+
+	rarch_encoding.OP_SIND: Sind,
+	rarch_encoding.OP_SOFF: Soff,
 }

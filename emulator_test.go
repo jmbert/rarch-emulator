@@ -17,3 +17,10 @@ func TestJumpAbs(t *testing.T) {
 		t.Error(err)
 	}
 }
+
+func TestRelLoad(t *testing.T) {
+	err := Emulate("tests/test3.bin")
+	if err != nil {
+		t.Error(err)
+	}
+}

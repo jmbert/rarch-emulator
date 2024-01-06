@@ -11,16 +11,20 @@ import (
 
 func Emulate(file string) error {
 
-	var s state.State
-	s.Init()
-
 	fcontents, err := os.ReadFile(file)
 	if err != nil {
 		return err
 	}
+	var s state.State
+	s.Init(fcontents)
 
 	for {
-		instr, size := rarch_encoding.DecodeInstruction(fcontents[s.Registers.PC.Value:])
+		pc := s.Registers.PC.Value
+		var instrBuffer []byte = make([]byte, 11)
+		for i := 0; i < len(instrBuffer); i++ {
+			instrBuffer[i] = s.Memory.PeekB(pc + uint64(i))
+		}
+		instr, size := rarch_encoding.DecodeInstruction(instrBuffer)
 		s.Registers.PC.Value += size
 		err = RunInstr(instr, &s)
 		if err != nil {
@@ -31,6 +35,8 @@ func Emulate(file string) error {
 			break
 		}
 	}
+
+	fmt.Printf("%v\n", s)
 
 	return nil
 }

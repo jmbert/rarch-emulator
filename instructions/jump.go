@@ -10,9 +10,7 @@ func Jump(i rarch_encoding.Instruction, s *state.State) error {
 
 	register := rarch_encoding.DecodeRegister(instr.Register)
 
-	sreg := GetRegister(register, &s.Registers)
-
-	s.Registers.PC.Value = sreg.Value
+	s.Registers.PC.Value = s.Registers.ReadReg(register)
 
 	return nil
 }
